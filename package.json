@@ -21,7 +21,8 @@
     "pretty-hrtime": "^1.0.0",
     "ssh-pool": "^1.0.0",
     "stream-line-wrapper": "^0.1.1",
-    "v8flags": "^2.0.2"
+    "v8flags": "^2.0.2",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",
@@ -31,7 +32,9 @@
     "sinon-chai": "^2.6.0"
   },
   "scripts": {
-    "test": "mocha && ./bin/shipit staging test"
+    "test": "mocha && ./bin/shipit staging test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "bin": {
     "shipit": "./bin/shipit"
@@ -45,5 +48,6 @@
   "bugs": {
     "url": "https://github.com/shipitjs/shipit/issues"
   },
-  "homepage": "https://github.com/shipitjs/shipit"
+  "homepage": "https://github.com/shipitjs/shipit",
+  "snyk": true
 }
